@@ -1,0 +1,74 @@
+name: 🐛 Informe de Error (Bug Report)
+description: Reporta un error o un comportamiento inesperado.
+title: "[BUG]: "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Gracias por tomarte el tiempo de reportar un error. ¡Tu ayuda es invaluable!
+  - type: textarea
+    id: descripcion-bug
+    attributes:
+      label: Descripción del Error
+      description: Describe clara y concisamente el error. ¿Qué problema estás experimentando?
+      placeholder: Escribe aquí la descripción del problema...
+    validations:
+      required: true
+  - type: textarea
+    id: pasos-reproducir
+    attributes:
+      label: Pasos para Reproducir
+      description: Proporciona pasos claros para reproducir el comportamiento.
+      placeholder: |
+        1. Ir a '...'
+        2. Hacer clic en '....'
+        3. Desplazarse a '....'
+        4. Ver error
+      render: markdown
+    validations:
+      required: true
+  - type: textarea
+    id: comportamiento-esperado
+    attributes:
+      label: Comportamiento Esperado
+      description: Describe lo que esperabas que sucediera.
+    validations:
+      required: true
+  - type: textarea
+    id: comportamiento-actual
+    attributes:
+      label: Comportamiento Actual
+      description: Describe lo que realmente sucede.
+    validations:
+      required: true
+  - type: dropdown
+    id: version
+    attributes:
+      label: Versión
+      description: ¿En qué versión o *branch* del proyecto ocurrió el error?
+      options:
+        - latest
+        - main/master
+        - otra (especificar abajo)
+    validations:
+      required: true
+  - type: checkboxes
+    id: entorno
+    attributes:
+      label: Entorno de Ejecución
+      description: Marca los entornos donde has probado o visto el error.
+      options:
+        - label: Chrome
+        - label: Firefox
+        - label: Safari
+        - label: Edge
+        - label: Node.js (Servidor)
+        - label: Otro (especificar abajo)
+  - type: textarea
+    id: informacion-adicional
+    attributes:
+      label: Información Adicional (Logs, Capturas, etc.)
+      description: |
+        Cualquier otra información útil, como logs de la consola, capturas de pantalla o un enlace a un entorno de prueba.
+        Puedes arrastrar y soltar imágenes o archivos aquí.
