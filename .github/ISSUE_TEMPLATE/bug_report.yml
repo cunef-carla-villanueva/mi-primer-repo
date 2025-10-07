@@ -1,11 +1,18 @@
+<<<<<<< HEAD
 name: 🐛 Informe de Error (Bug Report)
 description: Reporta un error o un comportamiento inesperado.
 title: "[BUG]: "
+=======
+name: 🐛 Reporte de Bug
+description: Informa de un error o comportamiento inesperado en la aplicación.
+title: "[BUG] Descripción concisa del problema"
+
 labels: ["bug", "triage"]
 body:
   - type: markdown
     attributes:
       value: |
+<<<<<<< HEAD
         Gracias por tomarte el tiempo de reportar un error. ¡Tu ayuda es invaluable!
   - type: textarea
     id: descripcion-bug
@@ -72,3 +79,65 @@ body:
       description: |
         Cualquier otra información útil, como logs de la consola, capturas de pantalla o un enlace a un entorno de prueba.
         Puedes arrastrar y soltar imágenes o archivos aquí.
+=======
+        Gracias por tomarte el tiempo de reportar este problema. Por favor, completa la siguiente información para ayudarnos a reproducir y solucionar el error lo antes posible.
+
+  - type: input
+    id: version
+    attributes:
+      label: Versión del Software
+      description: ¿En qué versión o commit del proyecto encontraste el bug?
+      placeholder: "Ej: v1.2.0 o commit hash"
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem-description
+    attributes:
+      label: Descripción del Problema
+      description: Describe claramente el problema.
+      placeholder: "Ej: Al hacer clic en el botón 'Guardar', la aplicación se congela en lugar de guardar los datos."
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Pasos para Reproducir
+      description: Enumera los pasos necesarios para recrear el comportamiento inesperado.
+      placeholder: |
+        1. Ir a 'Página de Configuración'.
+        2. Ingresar un valor de '0' en el campo 'Límite'.
+        3. Hacer clic en 'Aplicar Cambios'.
+        4. Observar el error.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Comportamiento Esperado
+      description: Describe lo que *debería* haber sucedido.
+    validations:
+      required: true
+
+  - type: checkbox
+    id: environment-details
+    attributes:
+      label: Entorno
+      description: Por favor, especifica el entorno donde ocurrió el error.
+      options:
+        - label: SO: Windows
+        - label: SO: macOS
+        - label: SO: Linux
+        - label: Navegador: Chrome
+        - label: Navegador: Firefox
+        - label: Navegador: Edge
+        - label: Otros (Por favor, especifica en la descripción)
+        
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Capturas de Pantalla o Logs (Opcional)
+      description: Adjunta capturas de pantalla o fragmentos de logs que puedan ser útiles.
+

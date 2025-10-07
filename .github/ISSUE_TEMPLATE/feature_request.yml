@@ -1,11 +1,18 @@
+<<<<<<< HEAD
 name: ✨ Solicitud de Característica (Feature Request)
 description: Sugiere una idea para una nueva funcionalidad o mejora.
 title: "[FEAT]: "
 labels: ["enhancement", "feature"]
-body:
+=======
+name: ✨ Solicitud de Funcionalidad
+description: Sugiere una nueva idea o funcionalidad para el proyecto.
+title: "[FEATURE] Breve descripción de la funcionalidad"
+labels: ["enhancement", "triage"]
+
   - type: markdown
     attributes:
       value: |
+<<<<<<< HEAD
         ¡Nos encanta que propongas nuevas ideas! Describe tu propuesta lo más detalladamente posible.
   - type: textarea
     id: problema-actual
@@ -42,3 +49,36 @@ body:
     attributes:
       value: |
         ¡Gracias por tu contribución!
+=======
+        ¡Nos encantan las nuevas ideas! Por favor, describe la funcionalidad que te gustaría ver implementada.
+
+  - type: textarea
+    id: problem-to-solve
+    attributes:
+      label: El Problema o Necesidad
+      description: Describe el problema o la necesidad del usuario que esta nueva funcionalidad resolvería. ¿Por qué es importante?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-solution
+    attributes:
+      label: La Solución Propuesta (Funcionalidad)
+      description: Describe cómo te imaginas que funcionaría esta nueva característica. Si es posible, incluye ejemplos de uso o casos de borde.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives-considered
+    attributes:
+      label: Alternativas Consideradas (Opcional)
+      description: ¿Has considerado otras soluciones? Si es así, ¿por qué esta propuesta es mejor?
+    validations:
+      required: false
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Mockups o Ejemplos (Opcional)
+      description: Adjunta un enlace o una imagen si tienes un mockup de cómo se vería o funcionaría.
+>>>>>>> mi-primera-rama
