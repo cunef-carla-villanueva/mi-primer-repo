@@ -1,143 +1,69 @@
-<<<<<<< HEAD
-name: 🐛 Informe de Error (Bug Report)
-description: Reporta un error o un comportamiento inesperado.
+name: 🐞 Reporte de bug
+description: Informa de un error o comportamiento inesperado en el proyecto
 title: "[BUG]: "
-=======
-name: 🐛 Reporte de Bug
-description: Informa de un error o comportamiento inesperado en la aplicación.
-title: "[BUG] Descripción concisa del problema"
+labels: ["bug"]
+assignees: []
 
-labels: ["bug", "triage"]
 body:
   - type: markdown
     attributes:
       value: |
-<<<<<<< HEAD
-        Gracias por tomarte el tiempo de reportar un error. ¡Tu ayuda es invaluable!
-  - type: textarea
-    id: descripcion-bug
-    attributes:
-      label: Descripción del Error
-      description: Describe clara y concisamente el error. ¿Qué problema estás experimentando?
-      placeholder: Escribe aquí la descripción del problema...
-    validations:
-      required: true
-  - type: textarea
-    id: pasos-reproducir
-    attributes:
-      label: Pasos para Reproducir
-      description: Proporciona pasos claros para reproducir el comportamiento.
-      placeholder: |
-        1. Ir a '...'
-        2. Hacer clic en '....'
-        3. Desplazarse a '....'
-        4. Ver error
-      render: markdown
-    validations:
-      required: true
-  - type: textarea
-    id: comportamiento-esperado
-    attributes:
-      label: Comportamiento Esperado
-      description: Describe lo que esperabas que sucediera.
-    validations:
-      required: true
-  - type: textarea
-    id: comportamiento-actual
-    attributes:
-      label: Comportamiento Actual
-      description: Describe lo que realmente sucede.
-    validations:
-      required: true
-  - type: dropdown
-    id: version
-    attributes:
-      label: Versión
-      description: ¿En qué versión o *branch* del proyecto ocurrió el error?
-      options:
-        - latest
-        - main/master
-        - otra (especificar abajo)
-    validations:
-      required: true
-  - type: checkboxes
-    id: entorno
-    attributes:
-      label: Entorno de Ejecución
-      description: Marca los entornos donde has probado o visto el error.
-      options:
-        - label: Chrome
-        - label: Firefox
-        - label: Safari
-        - label: Edge
-        - label: Node.js (Servidor)
-        - label: Otro (especificar abajo)
-  - type: textarea
-    id: informacion-adicional
-    attributes:
-      label: Información Adicional (Logs, Capturas, etc.)
-      description: |
-        Cualquier otra información útil, como logs de la consola, capturas de pantalla o un enlace a un entorno de prueba.
-        Puedes arrastrar y soltar imágenes o archivos aquí.
-=======
-        Gracias por tomarte el tiempo de reportar este problema. Por favor, completa la siguiente información para ayudarnos a reproducir y solucionar el error lo antes posible.
+        Gracias por ayudarnos a mejorar el proyecto 🙌  
+        Por favor, completa la siguiente información para que podamos reproducir y solucionar el problema.
 
   - type: input
-    id: version
+    id: summary
     attributes:
-      label: Versión del Software
-      description: ¿En qué versión o commit del proyecto encontraste el bug?
-      placeholder: "Ej: v1.2.0 o commit hash"
-    validations:
-      required: true
+      label: 🧩 Descripción breve del bug
+      description: Resume en una o dos frases el problema que estás experimentando.
+      placeholder: No se carga la página de inicio al iniciar sesión.
 
   - type: textarea
-    id: problem-description
+    id: steps
     attributes:
-      label: Descripción del Problema
-      description: Describe claramente el problema.
-      placeholder: "Ej: Al hacer clic en el botón 'Guardar', la aplicación se congela en lugar de guardar los datos."
-    validations:
-      required: true
-
-  - type: textarea
-    id: steps-to-reproduce
-    attributes:
-      label: Pasos para Reproducir
-      description: Enumera los pasos necesarios para recrear el comportamiento inesperado.
+      label: 🪜 Pasos para reproducir el error
+      description: Explica paso a paso cómo reproducir el fallo.
       placeholder: |
-        1. Ir a 'Página de Configuración'.
-        2. Ingresar un valor de '0' en el campo 'Límite'.
-        3. Hacer clic en 'Aplicar Cambios'.
-        4. Observar el error.
-    validations:
-      required: true
+        1. Ir a la página de inicio
+        2. Hacer clic en “Iniciar sesión”
+        3. Introducir credenciales válidas
+        4. Se muestra un error 500 en consola
 
   - type: textarea
-    id: expected-behavior
+    id: expected
     attributes:
-      label: Comportamiento Esperado
-      description: Describe lo que *debería* haber sucedido.
-    validations:
-      required: true
+      label: ✅ Comportamiento esperado
+      description: Explica qué debería ocurrir si el sistema funcionara correctamente.
+      placeholder: La página debería redirigir al panel de usuario.
 
-  - type: checkbox
-    id: environment-details
+  - type: textarea
+    id: actual
     attributes:
-      label: Entorno
-      description: Por favor, especifica el entorno donde ocurrió el error.
+      label: ❌ Comportamiento actual
+      description: Describe lo que ocurre realmente.
+      placeholder: La aplicación muestra una página en blanco y un error 500 en la consola.
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: ⚠ Severidad del bug
+      description: Indica el impacto del error.
       options:
-        - label: SO: Windows
-        - label: SO: macOS
-        - label: SO: Linux
-        - label: Navegador: Chrome
-        - label: Navegador: Firefox
-        - label: Navegador: Edge
-        - label: Otros (Por favor, especifica en la descripción)
-        
-  - type: textarea
-    id: screenshots
-    attributes:
-      label: Capturas de Pantalla o Logs (Opcional)
-      description: Adjunta capturas de pantalla o fragmentos de logs que puedan ser útiles.
+        - Crítico (rompe la aplicación)
+        - Alto (afecta funciones importantes)
+        - Medio (afecta parcialmente)
+        - Bajo (impacto menor)
 
+  - type: input
+    id: environment
+    attributes:
+      label: 💻 Entorno
+      description: Indica en qué entorno ocurre el error.
+      placeholder: Windows 11, Chrome 129, Python 3.12
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: 📎 Información adicional
+      description: Agrega capturas, logs o cualquier detalle que ayude a entender el problema.
+      placeholder: Incluye aquí capturas de pantalla o trazas del error.
